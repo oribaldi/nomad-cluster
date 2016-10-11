@@ -31,11 +31,11 @@ Nomad models infraestructure as regions and datacenters. A region may contain mu
 
 At a high level, a single region Nomad cluster looks like this:
 
-<img src="https://www.nomadproject.io/assets/images/nomad-architecture-region-a5b20915.png" width="200">
+<img src="https://www.nomadproject.io/assets/images/nomad-architecture-region-a5b20915.png" width="400">
 
 A multi-region cluster, looks like this:
 
-<img src="https://www.nomadproject.io/assets/images/nomad-architecture-global-a8f14b78.png" width="200">
+<img src="https://www.nomadproject.io/assets/images/nomad-architecture-global-a8f14b78.png" width="400">
 
 Let's have a look at each element to understand more how they interact:
 
@@ -141,7 +141,7 @@ Tasks are scheduled on clients of the cluster. This is done through the mapping 
 
 An evaluation is created every time the external state changes. There are two situations that produce this change. The first case happens when a job is submitted, updated or deregistered by a user. The second case occurs when a client fails. These events trigger the creation of a new evaluation, in order to achieve the desired state (represented by jobs). The next diagram illustrates the life cyle of an evaluation in Nomad:
 
-<img src="https://www.nomadproject.io/assets/images/nomad-evaluation-flow-7629d361.png" width="200">
+<img src="https://www.nomadproject.io/assets/images/nomad-evaluation-flow-7629d361.png" width="400">
 
 Once an evaluation is created it is enqueued into the Evaluation Broker. Only the leader server runs this evaluation broker. Nomad servers run scheduling workers, which dequeue evaluations from the broker, and invoke the appropriate scheduler for the job.
 
