@@ -1,5 +1,5 @@
 # Nomad Cluster Setup
-This demo shows hot to setup a simple [Nomad](https://www.nomadproject.io/) Cluster using [Vagrant](https://www.vagrantup.com/) and [Consul](https://www.consul.io/). Morevoer, it provides a short introduction to [Nomad Internals](https://localhos.com).
+This demo shows hot to setup a simple [Nomad](https://www.nomadproject.io/) Cluster using [Vagrant](https://www.vagrantup.com/) and [Consul](https://www.consul.io/). Morevoer, it provides a short introduction to [Nomad Internals](nomad-internals/README.md).
 
 ## Requirements
 - Install Vagrant.
@@ -189,7 +189,7 @@ Once our Nomad cluster is created we can start interacting with it. The next sec
 
 Scheduling is the process of assigning tasks from jobs to client machines. The process must respect
 the constraints defined in the job description, and optimize for resource utilization. To understand how 
-this core function works in Nomad, please have a look to the [Consul Internals]() section.
+this core function works in Nomad, please have a look to the [Consul Internals](nomad-internals/README.md) section.
 
 Nomad comes with a Job template that illustrates how to configure tasks, constraints and resource allocation.
 To create the example run the following, in one of the server nodes:
@@ -254,4 +254,4 @@ example  service  50        running
 Note: the parameter "-address" should be also specified
 
 
-To learn more about Nomad please check the [Nomad Internals]() section and the [official site](https://www.nomadproject.io/).
+To learn more about Nomad please check the [Nomad Internals](nomad-internals/README.md) section and the [official site](https://www.nomadproject.io/).
