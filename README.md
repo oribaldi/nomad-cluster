@@ -177,8 +177,8 @@ loopback address instead of the bind address set in the config files. Example: -
 
 2. The cluster clients:
 ```
-# This will show the list of all clients if you do not specify an ID.
 $ nomad node-status -address="nomad-agent-http-adress:nomad-agent-http-port"
+# This will show the list of all clients if you do not specify an ID.
 ID        DC   Name           Drain  Status
 a72dfba2  dc1  nomad-client1  false  ready
 ```
@@ -252,12 +252,11 @@ example  service  50        running
 ```
 
 To check how many running allocations a node client has use:
-# This will show the list of all clients if you do not specify an ID.
+```
 $ nomad node-status -allocs -address="nomad-agent-http-adress:nomad-agent-http-port"
 ID        DC   Name           Class   Drain  Status  Running Allocs
 a72dfba2  dc1  nomad-client1  <none>  false  ready   1
 ```
-
 
 Note: the parameter "-address" should be also specified.
 
