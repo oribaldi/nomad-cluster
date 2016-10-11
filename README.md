@@ -253,7 +253,7 @@ example  service  50        running
 
 To check how many running allocations a node client has use:
 # This will show the list of all clients if you do not specify an ID.
-$ nomad node-status -address="nomad-agent-http-adress:nomad-agent-http-port"
+$ nomad node-status -allocs -address="nomad-agent-http-adress:nomad-agent-http-port"
 ID        DC   Name           Class   Drain  Status  Running Allocs
 a72dfba2  dc1  nomad-client1  <none>  false  ready   1
 ```
