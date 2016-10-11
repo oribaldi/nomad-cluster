@@ -1,5 +1,5 @@
 # Nomad Cluster Setup
-This demo shows hot to setup a simple [Nomad](https://www.nomadproject.io/) Cluster using [Vagrant](https://www.vagrantup.com/) and [Consul](https://www.consul.io/). Morevoer, it provides a short introduction to [Nomad Internals](nomad-internals/README.md).
+This demo shows hot to setup a simple [Nomad](https://www.nomadproject.io/) Cluster using [Vagrant](https://www.vagrantup.com/) and [Consul](https://www.consul.io/). Moreover, it provides a short introduction to [Nomad Internals](nomad-internals/README.md).
 
 ## Requirements
 - Install Vagrant.
@@ -42,7 +42,7 @@ $ vagrant destroy -f
 
 ## Consul
 [Consul](https://www.consul.io/) is a tool for discovering and configuring services. Its integration with Nomad facilitates the work.
-This secton explains how to create a Consul cluster. 
+This section explains how to create a Consul cluster. 
 
 Start by setting up the Consul agents for each node created with Vagrant.
 
@@ -124,7 +124,7 @@ By default the UI is available in "http://localhost:8500/ui".
 [Nomad](https://www.nomadproject.io/) is a tool for managing cluster of machines and running applications on them.
 Wen Consul is integrated with Nomad the Nomad Cluster gains the ability to bootstrap itself as well as provide service and health check registration to applications.
 
-This section shows how to create a Nomad Cluster with Consul.
+This section shows how to create a Nomad Cluster integrated with Consul.
 
 Lets start by creating the agents in each node.
 ```
@@ -142,7 +142,7 @@ $ ./setup.sh SERVER_IP CONFIG_PATH
 $ nomad agent -config /vagrant/nomad/config.hcl -config server.hcl
 ```
 
-We do this for every Nomad server (1, 2 and 3). In the same way we start the client agent:
+We do this for every Nomad server (1, 2 and 3), providing the corresponding IP address. In the same way we start the client agent:
 ```
 # Nomad Client
 ---------------------------
@@ -251,7 +251,16 @@ ID       Type     Priority  Status
 example  service  50        running
 ```
 
-Note: the parameter "-address" should be also specified
+To check how many running allocations a node client has use:
+# This will show the list of all clients if you do not specify an ID.
+$ nomad node-status -address="nomad-agent-http-adress:nomad-agent-http-port"
+ID        DC   Name           Class   Drain  Status  Running Allocs
+a72dfba2  dc1  nomad-client1  <none>  false  ready   1
+```
 
+
+Note: the parameter "-address" should be also specified.
+
+Using Jobs is a good way to test that your Nomad cluster is working as expected.
 
 To learn more about Nomad please check the [Nomad Internals](nomad-internals/README.md) section and the [official site](https://www.nomadproject.io/).
