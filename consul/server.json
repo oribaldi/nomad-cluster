@@ -1,0 +1,17 @@
+{
+    "bootstrap": false,
+    "server": true,
+    "bind_addr": "__PRIVATE_IP1__",
+    "advertise_addr": "__PRIVATE_IP1__",
+    "datacenter": "dc1",
+    "data_dir": "/var/lib/consul",
+    "log_level": "DEBUG",
+    "enable_syslog" : true,
+    "node_name": "__NODE_NAME__",
+    "encrypt": "__ENCRYPTION__",
+    "bootstrap_expect": 3,
+    "start_join": ["__PRIVATE_IP2__", "__PRIVATE_IP3__"],
+    "retry_join": ["__PRIVATE_IP1__", "__PRIVATE_IP2__", "__PRIVATE_IP3__"],
+    "retry_interval" : "15s",
+    "rejoin_after_leave": true
+}

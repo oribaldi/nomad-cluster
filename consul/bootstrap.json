@@ -1,0 +1,13 @@
+{
+    "bootstrap": true,
+    "server": true,
+    "bind_addr": "__PRIVATE_IP1__",
+    "advertise_addr": "__PRIVATE_IP1__",
+    "datacenter": "dc1",
+    "data_dir": "/var/lib/consul",
+    "log_level": "DEBUG",
+    "enable_syslog" : true,
+    "node_name": "__NODE_NAME__",
+    "encrypt": "__ENCRYPTION__",
+    "rejoin_after_leave": true
+}
